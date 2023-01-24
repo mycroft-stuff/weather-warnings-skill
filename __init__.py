@@ -20,7 +20,7 @@ class WeatherWarnings(MycroftSkill):
         cut3 = Popen(split("grep -m1 -B 999 -- 'Instructions:'"), stdin=cut2.stdout, stdout=PIPE)
         cut4 = Popen(split("grep -vE 'Instructions:|^--$'"), stdin=cut3.stdout, stdout=PIPE)         
         cut5 = Popen(split("tail -n +2"), stdin=cut4.stdout)
-        print("1"))
+        print("1")
         #translate = Popen(split("trans :en ",str(cut5)), stdin=cut5.stdout, stdout=PIPE)
         #print("Test", translate)
         
