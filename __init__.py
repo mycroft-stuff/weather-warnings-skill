@@ -20,14 +20,14 @@ class WeatherWarnings(MycroftSkill):
         cut3 = Popen(split("grep -m1 -B 999 -- 'Instructions:'"), stdin=cut2.stdout, stdout=PIPE)
         cut4 = Popen(split("grep -vE 'Instructions:|^--$'"), stdin=cut3.stdout, stdout=PIPE)         
         cut5 = Popen(split("tail -n +2"), stdin=cut4.stdout)
-        print(str(cut5))
+        print("1"))
         #translate = Popen(split("trans :en ",str(cut5)), stdin=cut5.stdout, stdout=PIPE)
         #print("Test", translate)
         
         
         xy = shlex.join(['trans ', ':en \'', str(cut5), '\''])
         
-        print(3 * str("TEST"))
+        print("2")
         
         #print(command)
         
@@ -41,7 +41,7 @@ class WeatherWarnings(MycroftSkill):
         #print(p)
 
         
-        self.speak_dialog("Lalala this is a testestestest 1 2 3")
+        self.speak_dialog("3")
 
 
 def create_skill():
