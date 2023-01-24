@@ -27,7 +27,7 @@ class WeatherWarnings(MycroftSkill):
         
         xy = shlex.join(['trans ', ':en \'', str(cut5), '\''])
         
-        print('XY = ')
+        print(3 * cut5)
         
         #print(command)
         
