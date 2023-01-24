@@ -21,7 +21,7 @@ class WeatherWarnings(MycroftSkill):
         cut5 = Popen(split("tail -n +2"), stdin=cut4.stdout)
         print(cut5)
         
-        command = list2cmdline("trans ", ":en '", cut5, "'")
+        command = list2cmdline("trans " ":en '" cut5 "'")
         
         print(command)
         
