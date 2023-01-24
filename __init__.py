@@ -1,5 +1,6 @@
 from mycroft import MycroftSkill, intent_file_handler
 from subprocess import Popen, PIPE
+from subprocess import list2cmdline
 from shlex import split
 
 
@@ -20,8 +21,10 @@ class WeatherWarnings(MycroftSkill):
         cut5 = Popen(split("tail -n +2"), stdin=cut4.stdout)
         print(cut5)
         
-        command = ["trans", ":en", "'",cut5,"'"]
+        command = list2cmdline("trans ", ":en '", cut5, "'")
+        
         print(command)
+        
         #p = Popen(command, shell=True)
         
         #translate = Popen(split("trans :en \'",cut5,"\'"), stdin=cut5.stdout, stdout=PIPE)
