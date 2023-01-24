@@ -20,7 +20,7 @@ class WeatherWarnings(MycroftSkill):
         cut5 = Popen(split("tail -n +2"), stdin=cut4.stdout)
         print(cut5)
         
-        command = ["trans :en '",cut5,"'"]
+        command = ["trans", ":en", "'",cut5,"'"]
         p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
         
         #translate = Popen(split("trans :en \'",cut5,"\'"), stdin=cut5.stdout, stdout=PIPE)
