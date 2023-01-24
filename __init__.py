@@ -1,7 +1,7 @@
 from mycroft import MycroftSkill, intent_file_handler
 from subprocess import Popen, PIPE
 from shlex import split
-import subprocess
+
 
 
 class WeatherWarnings(MycroftSkill):
@@ -21,7 +21,7 @@ class WeatherWarnings(MycroftSkill):
         print(cut5)
         
         command = ["trans", ":en", "'",cut5,"'"]
-        p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
+        p = Popen(command, shell=True, stdout=subprocess.PIPE)
         
         #translate = Popen(split("trans :en \'",cut5,"\'"), stdin=cut5.stdout, stdout=PIPE)
         #translate2 = Popen(split("awk 'NR==3'"), stdin=cut4.stdout)
