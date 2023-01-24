@@ -24,7 +24,7 @@ class WeatherWarnings(MycroftSkill):
         #print("Test", translate)
         
         
-        command = list2cmdline(['trans ' , ':en \'' , cut5 , '\''])
+        command = list2cmdline(['trans ' , ':en \'' , str(cut5) , '\''])
         
         print(command)
         
