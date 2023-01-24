@@ -24,7 +24,7 @@ class WeatherWarnings(MycroftSkill):
         #print("Test", translate)
         
         
-        xy = list2cmdline(['trans ' , ':en \'' , str(cut5) , '\''])
+        xy = shlex.join(['trans ', ':en \'', str(cut5), '\''])
         
         print(xy)
         
