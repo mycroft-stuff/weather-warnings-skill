@@ -13,11 +13,11 @@ class WeatherWarnings(MycroftSkill):
         self.speak_dialog('warnings.weather')
         
         lookup_aemet = Popen(split("lynx -dump https://www.meteoblue.com/en/weather/warnings/gandesa_spain_3121642"), stdout=PIPE)
-        cut1 = Popen(split("grep -A5000 -m1 -e 'explanations:'"), stdin=lookup_aemet.stdout)
-        cut2 = Popen(split("grep -vE 'explanations:|^--'"), stdin=cut1.stdout)
-        cut3 = Popen(split("grep -m1 -B 999 -- 'Instructions:'"), stdin=cut2.stdout)
-        cut4 = Popen(split("grep -vE 'Instructions:|^--$'"), stdin=cut3.stdout)         
-        cut5 = Popen(split("tail -n +2"), stdin=cut4.stdout)         
+        cut1 = Popen(split("grep -A5000 -m1 -e 'explanations:'"), stdin=lookup_aemet.stdout, stdout=PIPE)
+        cut2 = Popen(split("grep -vE 'explanations:|^--'"), stdin=cut1.stdout, stdout=PIPE)
+        cut3 = Popen(split("grep -m1 -B 999 -- 'Instructions:'"), stdin=cut2.stdout, stdout=PIPE)
+        cut4 = Popen(split("grep -vE 'Instructions:|^--$'"), stdin=cut3.stdout, stdout=PIPE)         
+        cut5 = Popen(split("tail -n +2"), stdin=cut4.stdout, stdout=PIPE)         
         
         
         #lookup_aemet = "lynx -dump https://www.meteoblue.com/en/weather/warnings/gandesa_spain_3121642 | grep -m1 -e 'explanations:' | grep -vE 'explanations:|^--' | grep -m1 -B 999 -- 'Instructions:' | grep -vE 'Instructions:|^--$' | tail -n +2"
