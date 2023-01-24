@@ -20,16 +20,16 @@ class WeatherWarnings(MycroftSkill):
         cut5 = Popen(split("tail -n +2"), stdin=cut4.stdout)
         print(cut5)
         
-        command = ["trans", ":en", "'",cut5,"'"]
-        print(command)
-        p = Popen(command, shell=True)
+        #command = ["trans", ":en", "'",cut5,"'"]
+       # print(command)
+        #p = Popen(command, shell=True)
         
         #translate = Popen(split("trans :en \'",cut5,"\'"), stdin=cut5.stdout, stdout=PIPE)
         #translate2 = Popen(split("awk 'NR==3'"), stdin=cut4.stdout)
         
         #lookup_aemet = "lynx -dump https://www.meteoblue.com/en/weather/warnings/gandesa_spain_3121642 | grep -m1 -e 'explanations:' | grep -vE 'explanations:|^--' | grep -m1 -B 999 -- 'Instructions:' | grep -vE 'Instructions:|^--$' | tail -n +2"
         
-        print(p)
+        #print(p)
 
         
         self.speak_dialog("Lalala this is a test 1 2 3")
