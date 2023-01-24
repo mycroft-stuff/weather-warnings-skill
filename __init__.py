@@ -8,6 +8,7 @@ class WeatherWarnings(MycroftSkill):
     @intent_file_handler('warnings.weather.intent')
     def handle_warnings_weather(self, message):
         self.speak_dialog('warnings.weather')
+        self.speak_dialog("Lalala this is a test")
 
 
 def create_skill():
