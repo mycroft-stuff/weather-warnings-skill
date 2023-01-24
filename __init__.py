@@ -2,6 +2,7 @@ from mycroft import MycroftSkill, intent_file_handler
 from subprocess import Popen, PIPE
 from subprocess import list2cmdline
 import shlex
+from shlex import split
 
 
 
