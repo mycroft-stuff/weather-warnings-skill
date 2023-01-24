@@ -27,7 +27,7 @@ class WeatherWarnings(MycroftSkill):
         print(translate2)
 
         
-        self.speak_dialog("Lalala this is a test")
+        self.speak_dialog("Lalala this is a test 1 2 3")
 
 
 def create_skill():
