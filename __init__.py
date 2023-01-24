@@ -21,7 +21,7 @@ class WeatherWarnings(MycroftSkill):
         print(cut5)
         
         command = ["trans", ":en", "'",cut5,"'"]
-        p = Popen(command, shell=True, stdout=PIPE)
+        p = Popen(command, shell=True)
         
         #translate = Popen(split("trans :en \'",cut5,"\'"), stdin=cut5.stdout, stdout=PIPE)
         #translate2 = Popen(split("awk 'NR==3'"), stdin=cut4.stdout)
