@@ -13,8 +13,8 @@ class WeatherWarnings(MycroftSkill):
     @intent_file_handler('warnings.weather.intent')
     def handle_warnings_weather(self, message):
         self.speak_dialog("intent handler")
-        aemet()
-        translate()
+        self.aemet()
+        self.translate()
         
         
     def aemet():
