@@ -13,6 +13,9 @@ class WeatherWarnings(MycroftSkill):
     @intent_file_handler('warnings.weather.intent')
     def handle_warnings_weather(self, message):
         self.speak_dialog("intent handler")
+        aemet()
+        translate()
+        
         
     def aemet():
         aemet = Popen(split("lynx -dump https://www.meteoblue.com/en/weather/warnings/gandesa_spain_3121642"), stdout=PIPE)
