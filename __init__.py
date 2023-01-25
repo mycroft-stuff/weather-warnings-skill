@@ -12,7 +12,7 @@ class WeatherWarnings(MycroftSkill):
 
     @intent_file_handler('warnings.weather.intent')
     def handle_warnings_weather(self, message):
-        self.speak_dialog('warnings.weather')
+        self.speak_dialog('11')
         
         lookup_aemet = Popen(split("lynx -dump https://www.meteoblue.com/en/weather/warnings/gandesa_spain_3121642"), stdout=PIPE)
         cut1 = Popen(split("grep -A5000 -m1 -e 'explanations:'"), stdin=lookup_aemet.stdout, stdout=PIPE)
