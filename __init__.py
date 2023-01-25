@@ -10,7 +10,7 @@ class WeatherWarnings(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
 
-    @intent_handler('warnings.weather.intent')
+    @intent_file_handler('warnings.weather.intent')
     def handle_warnings_weather(self, message):
         self.speak_dialog("intent handler")
         
